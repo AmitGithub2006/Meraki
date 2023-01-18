@@ -40,7 +40,6 @@ export default function Editor(props) {
         onCut={(e) => e.preventDefault()}
         onCopy={(e) => e.preventDefault()}
         onContextMenu={(e) => e.preventDefault()}
-        // onPaste={(e) => e.preventDefault()}
       >
         <ControlledEditor
           onBeforeChange={handleChange}
