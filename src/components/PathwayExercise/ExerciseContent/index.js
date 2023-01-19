@@ -310,6 +310,7 @@ function ExerciseContent({
   const [html, setHtml] = useLocalStorage("html", "");
   const [srcDoc, setSrcDoc] = useState("");
 
+  // Code for displaying the result starts here
   useEffect(() => {
     const timeout = setTimeout(() => {
       setSrcDoc(`
@@ -321,6 +322,7 @@ function ExerciseContent({
 
     return () => clearTimeout(timeout);
   }, [html]);
+  // Code for displaying the result ends here
 
   useEffect(() => {
     if (cashedData?.length > 0) {
@@ -448,9 +450,7 @@ function ExerciseContent({
           </Grid>
         </Grid>
 
-        <Container
-          maxWidth="sm"
-        >
+        <Container maxWidth="sm">
           {desktop ? (
             <PersistentDrawerLeft
               setSelected={setSelected}
@@ -513,6 +513,7 @@ function ExerciseContent({
 
   return (
     <>
+    {/* Code to display html code starts here */}
       {!loading ? <ExerciseContentMain /> : <ExerciseContentLoading />}
       <div className="pane top-pane">
         <Editor

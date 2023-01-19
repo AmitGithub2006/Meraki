@@ -16,6 +16,7 @@ export default function Editor(props) {
     onChange(value);
   }
 
+  // Code to restrict ctrl+v starts here
   useEffect(() => {
     document.addEventListener("keydown", (e) => {
       if ((e.ctrlKey || e.metaKey) && e.key === "v") {
@@ -23,8 +24,10 @@ export default function Editor(props) {
       }
     });
   }, []);
+  // Code to restrict ctrl+v ends here
 
   return (
+    // Code for container starts here
     <div className={`editor-container ${open ? "" : "collapsed"}`}>
       <div className="editor-title">
         {displayName}
@@ -36,6 +39,7 @@ export default function Editor(props) {
           <FontAwesomeIcon icon={open ? faCompressAlt : faExpandAlt} />
         </button>
       </div>
+      {/* Code for input values starts here */}
       <div
         onCut={(e) => e.preventDefault()}
         onCopy={(e) => e.preventDefault()}
